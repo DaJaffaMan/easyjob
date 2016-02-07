@@ -1,4 +1,4 @@
-package config;
+package easyjob.config;
 
 import org.elasticsearch.client.Client;
 import org.elasticsearch.node.Node;
