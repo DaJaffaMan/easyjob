@@ -1,2 +1,2 @@
 # Easyjob
-Easyjob is an app that helps people earn money doing simple tasks
+Easyjob is an app that helps find others to complete chores you don't want to
