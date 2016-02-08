@@ -8,13 +8,13 @@ public class Ad {
 
     @Id
     private int adId;
-    private String username;
+    private String email;
     private String adTitle;
     private String adDescription;
 
-    private Ad(int adId, String username, String adTitle, String adDescription) {
+    private Ad(int adId, String email, String adTitle, String adDescription) {
         this.adId = adId;
-        this.username = username;
+        this.email = email;
         this.adTitle = adTitle;
         this.adDescription = adDescription;
     }
@@ -27,12 +27,12 @@ public class Ad {
         this.adId = adId;
     }
 
-    public String getUsername() {
-        return username;
+    public String getEmail() {
+        return email;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getAdTitle() {

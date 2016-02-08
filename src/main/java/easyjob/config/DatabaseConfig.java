@@ -1,21 +1,26 @@
 package easyjob.config;
 
+import easyjob.handlers.HandlerConfig;
+import easyjob.repositories.RepositoryConfig;
+import easyjob.transformer.TransformerConfig;
 import org.elasticsearch.client.Client;
 import org.elasticsearch.node.Node;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
-import org.springframework.stereotype.Component;
+import org.springframework.data.elasticsearch.repository.config.EnableElasticsearchRepositories;
 
 import static org.elasticsearch.node.NodeBuilder.nodeBuilder;
 
-@Component
 @Configuration
+@EnableElasticsearchRepositories(basePackages = "easyjob.repositories")
+@Import({HandlerConfig.class, RepositoryConfig.class, TransformerConfig.class})
 public class DatabaseConfig {
 
     @Bean
     public Node node() {
-        return nodeBuilder().local(true).build();
+        return nodeBuilder().local(true).node();
     }
 
     @Bean
