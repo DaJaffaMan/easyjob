@@ -1,7 +1,7 @@
 package easyjob;
 
 import easyjob.config.DatabaseConfig;
-import easyjob.handlers.GetAdHandler;
+import easyjob.handlers.GetAdByAdIdHandler;
 import easyjob.handlers.PostAdHandler;
 import easyjob.transformer.JsonTransformer;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -16,12 +16,12 @@ public class App {
     public static void main(String[] args) {
 
         context = new AnnotationConfigApplicationContext(DatabaseConfig.class);
-        final GetAdHandler getAdHandler = context.getBean(GetAdHandler.class);
+        final GetAdByAdIdHandler adByAdIdHandler = context.getBean(GetAdByAdIdHandler.class);
         final PostAdHandler postAdHandler = context.getBean(PostAdHandler.class);
 
         final JsonTransformer transformer = context.getBean(JsonTransformer.class);
 
-        get("/get/ad/:adId", getAdHandler, transformer);
+        get("/get/ad/:adId", adByAdIdHandler, transformer);
 
         post("/post/ad/:adId/:email/:adTitle/:adDescription", postAdHandler);
     }
