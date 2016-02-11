@@ -1,2 +1,2 @@
 # Easyjob
-Easyjob is an app that helps find others to complete chores you don't want to
+Easyjob is an app that helps you find others to complete tasks you don't have time to do or can't do
