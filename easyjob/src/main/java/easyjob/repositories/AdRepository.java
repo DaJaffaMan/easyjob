@@ -5,7 +5,7 @@ import org.springframework.data.elasticsearch.repository.ElasticsearchCrudReposi
 
 import java.util.List;
 
-public interface AdRepository extends ElasticsearchCrudRepository<Ad,Integer> {
+public interface AdRepository extends ElasticsearchCrudRepository<Ad, Integer> {
 
     List<Ad> findAdByAdId(Integer adId);
 

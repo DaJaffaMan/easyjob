@@ -1,5 +1,35 @@
 <ion-view view-title="Post Ad">
   <ion-content>
-    <h1>Post</h1>
+    <ion-list>
+      <div class="list">
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Id</span>
+          <input type="text" placeholder="Id" ng-modal="adId">
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Email</span>
+          <input type="text" placeholder="example@email.uk" ng-modal="adId">
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Title</span>
+          <input type="text" placeholder="Title" ng-modal="adId">
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Description</span>
+          <input type="text" placeholder="Description" ng-modal="adId">
+        </label>
+        <label class="item item-input item-select">
+          <span class="input-label">Category</span>
+          <select>
+            <option selected>General</option>
+            <option>DIY</option>
+            <option>Finance</option>
+            <option>Landscaping</option>
+            <option>Software</option>
+            <option>SpareThing</option>
+          </select>
+        </label>
+      </div>
+    </ion-list>
   </ion-content>
 </ion-view>

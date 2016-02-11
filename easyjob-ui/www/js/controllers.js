@@ -55,11 +55,15 @@ angular.module('starter.controllers', [])
 .controller('CategoryCtrl', function($scope, $stateParams) {
 })
 
-.controller('PostCtrl', function($scope, adService) {
+.controller('PostCrtl', function($scope, adService) {
     $scope.getAd = function() {
       adService.getAdDetails($scope.adId)
           .then(function(response){
               $scope.adDetails = response.data;
       })
     }
-})
+
+    $scope.postAd = function() {
+          adService.postAdDetails($scope.adId, $scope.email, $scope.adTitle, $scope.adDescription);
+       }
+    });
