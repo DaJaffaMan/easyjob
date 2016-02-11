@@ -51,8 +51,15 @@ angular.module('starter.controllers', [])
     { title: 'SpareThing', id: 6 }
   ];
 })
-.controller('PostCtrl', function($scope) {
-})
 
 .controller('CategoryCtrl', function($scope, $stateParams) {
+})
+
+.controller('PostCtrl', function($scope, adService) {
+    $scope.getAd = function() {
+      adService.getAdDetails($scope.adId)
+          .then(function(response){
+              $scope.adDetails = response.data;
+      })
+    }
 })

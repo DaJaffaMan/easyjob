@@ -45,8 +45,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         url: '/post',
         views: {
           'menuContent': {
-            templateUrl: 'templates/post-ad.html',
-            controller: 'PostCtrl'
+            templateUrl: 'templates/post.html',
+            controller: 'PostCrtl'
           }
         }
       })
