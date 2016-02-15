@@ -1,22 +1,22 @@
 <ion-view view-title="Post Ad">
-  <ion-content>
+  <ion-content ng-controller="PostCrtl">
     <ion-list>
       <div class="list">
         <label class="item item-input item-floating-label">
           <span class="input-label">Id</span>
-          <input type="text" placeholder="Id" ng-modal="adId">
+          <input type="text" placeholder="Id" ng-model="ad">
         </label>
         <label class="item item-input item-floating-label">
           <span class="input-label">Email</span>
-          <input type="text" placeholder="example@email.uk" ng-modal="adId">
+          <input type="text" placeholder="example@email.uk" ng-model="email">
         </label>
         <label class="item item-input item-floating-label">
           <span class="input-label">Title</span>
-          <input type="text" placeholder="Title" ng-modal="adId">
+          <input type="text" placeholder="Title" ng-model="title">
         </label>
         <label class="item item-input item-floating-label">
           <span class="input-label">Description</span>
-          <input type="text" placeholder="Description" ng-modal="adId">
+          <input type="text" placeholder="Description" ng-model="description">
         </label>
         <label class="item item-input item-select">
           <span class="input-label">Category</span>
@@ -31,5 +31,8 @@
         </label>
       </div>
     </ion-list>
+    <button class="button button-full button-stable" ng-click="postAd()">
+      Post Ad
+    </button>
   </ion-content>
 </ion-view>

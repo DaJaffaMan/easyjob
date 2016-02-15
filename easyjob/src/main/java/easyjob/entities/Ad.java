@@ -12,7 +12,11 @@ public class Ad {
     private String adTitle;
     private String adDescription;
 
-    private Ad(int adId, String email, String adTitle, String adDescription) {
+    public Ad() {
+
+    }
+
+    public Ad(int adId, String email, String adTitle, String adDescription) {
         this.adId = adId;
         this.email = email;
         this.adTitle = adTitle;

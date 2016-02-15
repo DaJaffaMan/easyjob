@@ -56,6 +56,7 @@ angular.module('starter.controllers', [])
 })
 
 .controller('PostCrtl', function($scope, adService) {
+
     $scope.getAd = function() {
       adService.getAdDetails($scope.adId)
           .then(function(response){
@@ -64,6 +65,6 @@ angular.module('starter.controllers', [])
     }
 
     $scope.postAd = function() {
-          adService.postAdDetails($scope.adId, $scope.email, $scope.adTitle, $scope.adDescription);
+          adService.postAdDetails($scope.ad, $scope.email, $scope.title, $scope.description);
        }
     });

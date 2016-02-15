@@ -6,8 +6,7 @@ import easyjob.handlers.PostAdHandler;
 import easyjob.transformer.JsonTransformer;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import static spark.Spark.get;
-import static spark.Spark.post;
+import static spark.Spark.*;
 
 public class App {
 
@@ -20,6 +19,9 @@ public class App {
         final PostAdHandler postAdHandler = context.getBean(PostAdHandler.class);
 
         final JsonTransformer transformer = context.getBean(JsonTransformer.class);
+
+        final String appPort = System.getProperty("app.port", "5000");
+        port(Integer.valueOf(appPort));
 
         get("/get/ad/:adId", adByAdIdHandler, transformer);
 
