@@ -60,14 +60,14 @@ angular.module('starter.controllers', [])
     $scope.getAdById = function() {
       adService.getAdDetailsById($scope.adId)
           .then(function(response){
-              $scope.adDetails = response.data;
+              $scope.adIdData = response.data;
       })
     }
 
     $scope.getAdByTitle = function() {
-          adService.getAdDetailsByTitle($scope.search)
+          adService.getAdDetailsByTitle($scope.adTitle)
               .then(function(response){
-                  $scope.adDetails = response.data;
+                  $scope.adTitleData = response.data;
           })
         }
 

@@ -1,1 +1,12 @@
-/* Empty. Add your own CSS if you like */
+.responsive-card {
+    width: 100%;
+    float: left;
+}
+
+@media screen and (min-width: 768px) {
+    .responsive-card {
+        display: inline-block;
+        margin-right: 4px;
+        width: 24%;
+    }
+}
