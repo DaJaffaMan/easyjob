@@ -1,4 +1,4 @@
-package filter;
+package easyjob.filter;
 
 import spark.Filter;
 import spark.Spark;

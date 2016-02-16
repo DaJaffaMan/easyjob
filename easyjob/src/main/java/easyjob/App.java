@@ -4,7 +4,7 @@ import easyjob.config.DatabaseConfig;
 import easyjob.handlers.GetAdByAdIdHandler;
 import easyjob.handlers.PostAdHandler;
 import easyjob.transformer.JsonTransformer;
-import filter.CorsFilter;
+import easyjob.filter.CorsFilter;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import static spark.Spark.*;
