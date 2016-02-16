@@ -55,14 +55,21 @@ angular.module('starter.controllers', [])
 .controller('CategoryCtrl', function($scope, $stateParams) {
 })
 
-.controller('PostCrtl', function($scope, adService) {
+.controller('AdCrtl', function($scope, adService) {
 
-    $scope.getAd = function() {
-      adService.getAdDetails($scope.adId)
+    $scope.getAdById = function() {
+      adService.getAdDetailsById($scope.adId)
           .then(function(response){
               $scope.adDetails = response.data;
       })
     }
+
+    $scope.getAdByTitle = function() {
+          adService.getAdDetailsByTitle($scope.search)
+              .then(function(response){
+                  $scope.adDetails = response.data;
+          })
+        }
 
     $scope.postAd = function() {
           adService.postAdDetails($scope.ad, $scope.email, $scope.title, $scope.description);
