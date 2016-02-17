@@ -9,6 +9,6 @@ public interface AdRepository extends ElasticsearchCrudRepository<Ad, Integer> {
 
     List<Ad> findAdByAdId(Integer adId);
 
-    List<Ad> findAdByAdTitle(String adTitle);
+    List<Ad> findAdByAdTitleLike(String adTitle);
 
 }

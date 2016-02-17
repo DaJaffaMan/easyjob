@@ -23,7 +23,7 @@ public class GetAdByAdTitleHandler implements Route {
 
         String adTitle = request.params(":adTitle");
 
-        return adRepository.findAdByAdTitle(adTitle);
+        return adRepository.findAdByAdTitleLike(adTitle);
 
     }
 }
