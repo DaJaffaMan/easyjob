@@ -11,6 +11,7 @@ import java.math.BigDecimal;
 public class Ad {
 
     @Id
+    private String id;
     private String email;
     private String adTitle;
     private String adDescription;
@@ -27,7 +28,7 @@ public class Ad {
         this.adTitle = adTitle;
         this.adDescription = adDescription;
         this.fee = fee;
-        this.location = new GeoPoint(lat,lon);
+        this.location = new GeoPoint(lat, lon);
     }
 
     public String getEmail() {

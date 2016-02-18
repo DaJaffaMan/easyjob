@@ -25,7 +25,7 @@ public class PostAdHandler implements Route {
         String email = request.params(":email");
         String adTitle = request.params(":adTitle");
         String adDescription = request.params(":adDescription");
-        BigDecimal fee = new BigDecimal(request.params(":fee"));
+        BigDecimal fee = new BigDecimal(Double.parseDouble(request.params(":fee")));
         double lat = Double.parseDouble(request.params(":lat"));
         double lon = Double.parseDouble(request.params(":lon"));
 
