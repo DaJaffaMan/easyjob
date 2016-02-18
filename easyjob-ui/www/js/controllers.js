@@ -56,13 +56,6 @@ angular.module('starter.controllers', [])
 
 .controller('AdCrtl', function($scope, adService) {
 
-    $scope.getAdById = function() {
-      adService.getAdDetailsById($scope.adId)
-          .then(function(response){
-              $scope.adIdData = response.data;
-      })
-    }
-
     $scope.getAdByTitle = function() {
           adService.getAdDetailsByTitle($scope.adTitle)
               .then(function(response){
@@ -71,6 +64,16 @@ angular.module('starter.controllers', [])
         }
 
     $scope.postAd = function() {
-          adService.postAdDetails($scope.email, $scope.title, $scope.description);
+          navigator.geolocation.getCurrentPosition(getLocation);
        }
+
+    function getLocation(location) {
+      var lat = location.coords.latitude;
+      var lon = location.coords.longitude;
+      sendPostAdRequest(lat,lon);
+    }
+
+    function sendPostAdRequest(lat,lon) {
+      adService.postAdDetails($scope.email, $scope.title, $scope.description, $scope.fee, lat, lon);
+    }
     });

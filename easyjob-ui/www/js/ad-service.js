@@ -8,8 +8,8 @@ angular.module('starter').service('adService', ['$http', function($http){
                   return $http.get(window.location.protocol + '//' + window.location.hostname + ':5000' + '/get/ad/title/' + adTitle);
                 },
 
-        postAdDetails: function(id, email, title, description) {
-          return $http.post(window.location.protocol + '//' + window.location.hostname + ':5000' + '/post/ad/' + id + '/' + email + '/' + title + '/' + description);
+        postAdDetails: function(email, title, description, fee, lat, lon) {
+          return $http.post(window.location.protocol + '//' + window.location.hostname + ':5000' + '/post/ad/' + email + '/' + title + '/' + description + '/' + fee + '/'  + lat + '/'  + lon);
         }
     };
 }]);
