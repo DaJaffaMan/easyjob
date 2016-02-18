@@ -8,6 +8,7 @@ import spark.Response;
 import spark.Route;
 
 import javax.inject.Inject;
+import java.math.BigDecimal;
 
 @Component
 public class PostAdHandler implements Route {
@@ -21,12 +22,14 @@ public class PostAdHandler implements Route {
 
     public Object handle(Request request, Response response) throws Exception {
 
-        int adId = Integer.parseInt(request.params(":adId"));
         String email = request.params(":email");
         String adTitle = request.params(":adTitle");
         String adDescription = request.params(":adDescription");
+        BigDecimal fee = new BigDecimal(request.params(":fee"));
+        double lat = Double.parseDouble(request.params(":lat"));
+        double lon = Double.parseDouble(request.params(":lon"));
 
-        adRepository.save(new Ad(adId, email, adTitle, adDescription));
+        adRepository.save(new Ad(email, adTitle, adDescription, fee, lat, lon));
 
         return "ad added";
     }

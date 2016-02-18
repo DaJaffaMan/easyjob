@@ -47,8 +47,7 @@ angular.module('starter.controllers', [])
     { title: 'DIY', id: 2 },
     { title: 'Finance', id: 3 },
     { title: 'Landscaping', id: 4 },
-    { title: 'Software', id: 5 },
-    { title: 'SpareThing', id: 6 }
+    { title: 'Software', id: 5 }
   ];
 })
 
@@ -72,6 +71,6 @@ angular.module('starter.controllers', [])
         }
 
     $scope.postAd = function() {
-          adService.postAdDetails($scope.ad, $scope.email, $scope.title, $scope.description);
+          adService.postAdDetails($scope.email, $scope.title, $scope.description);
        }
     });

@@ -3,10 +3,6 @@
     <ion-list>
       <div class="list">
         <label class="item item-input item-floating-label">
-          <span class="input-label">Id</span>
-          <input type="text" placeholder="Id" ng-model="ad">
-        </label>
-        <label class="item item-input item-floating-label">
           <span class="input-label">Email</span>
           <input type="text" placeholder="example@email.uk" ng-model="email">
         </label>
@@ -17,6 +13,11 @@
         <label class="item item-input item-floating-label">
           <span class="input-label">Description</span>
           <input type="text" placeholder="Description" ng-model="description">
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Fee</span>
+          <input type="number" step="0.01" onchange="(function(fee){fee.value=parseFloat(fee.value).toFixed(2);})(this)"
+                 value="0.00" placeholder="Fee" ng-model="fee">
         </label>
         <label class="item item-input item-select">
           <span class="input-label">Category</span>

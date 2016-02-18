@@ -7,8 +7,6 @@ import java.util.List;
 
 public interface AdRepository extends ElasticsearchCrudRepository<Ad, Integer> {
 
-    List<Ad> findAdByAdId(Integer adId);
-
     List<Ad> findAdByAdTitleLike(String adTitle);
 
 }
