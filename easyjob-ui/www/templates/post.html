@@ -1,27 +1,27 @@
-<ion-view view-title="Post Ad">
+<ion-view view-title="Create Ad">
   <ion-content ng-controller="AdCrtl">
     <ion-list>
       <div class="list">
         <label class="item item-input item-floating-label">
           <span class="input-label">Email</span>
-          <input type="text" placeholder="example@email.uk" ng-model="email">
+          <input id="email" type="text" placeholder="example@email.uk" ng-model="email">
         </label>
         <label class="item item-input item-floating-label">
           <span class="input-label">Title</span>
-          <input type="text" placeholder="Title" ng-model="title">
+          <input id="title" type="text" placeholder="Title" ng-model="title">
         </label>
         <label class="item item-input item-floating-label">
           <span class="input-label">Description</span>
-          <input type="text" placeholder="Description" ng-model="description">
+          <input id="description" type="text" placeholder="Description" ng-model="description">
         </label>
         <label class="item item-input item-floating-label">
           <span class="input-label">Fee</span>
-          <input type="number" step="0.01" onchange="(function(fee){fee.value=parseFloat(fee.value).toFixed(2);})(this)"
+          <input id="fee" type="number" step="0.01" onchange="(function(fee){fee.value=parseFloat(fee.value).toFixed(2);})(this)"
                  value="0.00" placeholder="Fee" ng-model="fee">
         </label>
         <label class="item item-input item-select">
           <span class="input-label">Category</span>
-          <select>
+          <select id="category">
             <option selected>General</option>
             <option>DIY</option>
             <option>Finance</option>

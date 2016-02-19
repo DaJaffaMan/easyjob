@@ -2,6 +2,7 @@ package easyjob.handlers;
 
 import easyjob.entities.Ad;
 import easyjob.repositories.AdRepository;
+import org.springframework.data.elasticsearch.core.geo.GeoPoint;
 import org.springframework.stereotype.Component;
 import spark.Request;
 import spark.Response;
@@ -28,8 +29,9 @@ public class PostAdHandler implements Route {
         BigDecimal fee = new BigDecimal(Double.parseDouble(request.params(":fee")));
         double lat = Double.parseDouble(request.params(":lat"));
         double lon = Double.parseDouble(request.params(":lon"));
+        GeoPoint location = new GeoPoint(lat, lon);
 
-        adRepository.save(new Ad(email, adTitle, adDescription, fee, lat, lon));
+        adRepository.save(new Ad(email, adTitle, adDescription, fee, location));
 
         return "ad added";
     }
