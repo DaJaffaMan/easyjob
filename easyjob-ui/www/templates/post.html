@@ -1,36 +1,34 @@
 <ion-view view-title="Create Ad">
   <ion-content ng-controller="AdCrtl">
     <ion-list>
-      <div class="list">
-        <label class="item item-input item-floating-label">
-          <span class="input-label">Email</span>
-          <input id="email" type="text" placeholder="example@email.uk" ng-model="email">
-        </label>
-        <label class="item item-input item-floating-label">
-          <span class="input-label">Title</span>
-          <input id="title" type="text" placeholder="Title" ng-model="title">
-        </label>
-        <label class="item item-input item-floating-label">
-          <span class="input-label">Description</span>
-          <input id="description" type="text" placeholder="Description" ng-model="description">
-        </label>
-        <label class="item item-input item-floating-label">
-          <span class="input-label">Fee</span>
-          <input id="fee" type="number" step="0.01" onchange="(function(fee){fee.value=parseFloat(fee.value).toFixed(2);})(this)"
-                 value="0.00" placeholder="Fee" ng-model="fee">
-        </label>
-        <label class="item item-input item-select">
-          <span class="input-label">Category</span>
-          <select id="category">
-            <option selected>General</option>
-            <option>DIY</option>
-            <option>Finance</option>
-            <option>Landscaping</option>
-            <option>Software</option>
-            <option>SpareThing</option>
-          </select>
-        </label>
-      </div>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Email</span>
+        <input id="email" type="text" placeholder="example@email.uk" ng-model="email">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Title</span>
+        <input id="title" type="text" placeholder="Title" ng-model="title">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Description</span>
+        <input id="description" type="text" placeholder="Description" ng-model="description">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Fee</span>
+        <input id="fee" type="number" step="0.01" onchange="(function(fee){fee.value=parseFloat(fee.value).toFixed(2);})(this)"
+               value="0.00" placeholder="Fee" ng-model="fee">
+      </label>
+      <label class="item item-input item-select">
+        <span class="input-label">Category</span>
+        <select id="category">
+          <option selected>General</option>
+          <option>DIY</option>
+          <option>Finance</option>
+          <option>Landscaping</option>
+          <option>Software</option>
+          <option>SpareThing</option>
+        </select>
+      </label>
     </ion-list>
     <button class="button button-full button-stable" ng-click="postAd()">
       Post Ad
