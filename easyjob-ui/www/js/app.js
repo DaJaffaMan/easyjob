@@ -44,8 +44,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         url: '/post',
         views: {
             'menuContent': {
-                templateUrl: 'templates/post.html',
-                controller: 'AdCrtl'
+                templateUrl: 'templates/post.html'
             }
         }
     })
