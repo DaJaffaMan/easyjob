@@ -25,8 +25,8 @@ public class App {
         port(Integer.valueOf(appPort));
 
         CorsFilter.apply();
-        get("/get/ad/title/:adTitle", adByAdTitleHandler, transformer);
+        get("/get/ad/:title", adByAdTitleHandler, transformer);
 
-        post("/post/ad/:email/:adTitle/:adDescription/:fee/:lat/:lon", postAdHandler);
+        post("/post/ad", postAdHandler);
     }
 }

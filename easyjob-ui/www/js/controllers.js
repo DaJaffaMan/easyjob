@@ -65,7 +65,7 @@ angular.module('starter.controllers', [])
 .controller('AdCrtl', function($scope, adService) {
 
     $scope.getAdByTitle = function() {
-        adService.getAdDetailsByTitle($scope.adTitle)
+        adService.getAdDetailsByTitle($scope.title)
             .then(function(response) {
                 $scope.adTitleData = response.data;
             })

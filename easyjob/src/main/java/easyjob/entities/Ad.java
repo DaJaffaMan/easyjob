@@ -13,8 +13,8 @@ public class Ad {
     @Id
     private String id;
     private String email;
-    private String adTitle;
-    private String adDescription;
+    private String title;
+    private String description;
     private BigDecimal fee;
     private GeoPoint location;
     private Category category;
@@ -23,10 +23,10 @@ public class Ad {
 
     }
 
-    public Ad(String email, String adTitle, String adDescription, BigDecimal fee, GeoPoint location) {
+    public Ad(String email, String title, String description, BigDecimal fee, GeoPoint location) {
         this.email = email;
-        this.adTitle = adTitle;
-        this.adDescription = adDescription;
+        this.title = title;
+        this.description = description;
         this.fee = fee;
         this.location = location;
     }
@@ -39,20 +39,20 @@ public class Ad {
         this.email = email;
     }
 
-    public String getAdTitle() {
-        return adTitle;
+    public String getTitle() {
+        return title;
     }
 
-    public void setAdTitle(String adTitle) {
-        this.adTitle = adTitle;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String getAdDescription() {
-        return adDescription;
+    public String getDescription() {
+        return description;
     }
 
-    public void setAdDescription(String adDescription) {
-        this.adDescription = adDescription;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public BigDecimal getFee() {
