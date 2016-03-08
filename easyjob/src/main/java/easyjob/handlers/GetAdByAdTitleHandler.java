@@ -1,6 +1,6 @@
 package easyjob.handlers;
 
-import easyjob.repositories.AdRepository;
+import easyjob.repositories.ads.AdRepository;
 import org.springframework.stereotype.Component;
 import spark.Request;
 import spark.Response;

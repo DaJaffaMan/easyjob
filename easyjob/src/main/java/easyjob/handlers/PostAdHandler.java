@@ -2,7 +2,7 @@ package easyjob.handlers;
 
 import com.google.gson.Gson;
 import easyjob.entities.Ad;
-import easyjob.repositories.AdRepository;
+import easyjob.repositories.ads.AdRepository;
 import org.springframework.data.elasticsearch.core.geo.GeoPoint;
 import org.springframework.stereotype.Component;
 import spark.Request;

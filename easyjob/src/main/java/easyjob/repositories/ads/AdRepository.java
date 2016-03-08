@@ -1,4 +1,4 @@
-package easyjob.repositories;
+package easyjob.repositories.ads;
 
 import easyjob.entities.Ad;
 import org.springframework.data.elasticsearch.repository.ElasticsearchCrudRepository;
