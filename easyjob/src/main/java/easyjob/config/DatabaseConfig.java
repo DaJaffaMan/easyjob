@@ -1,7 +1,7 @@
 package easyjob.config;
 
 import easyjob.handlers.HandlerConfig;
-import easyjob.repositories.RepositoryConfig;
+import easyjob.repositories.ads.RepositoryConfig;
 import easyjob.transformer.TransformerConfig;
 import org.elasticsearch.client.Client;
 import org.elasticsearch.node.Node;

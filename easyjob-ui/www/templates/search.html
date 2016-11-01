@@ -3,7 +3,7 @@
     <div>
       <div class="item item-input-inset">
         <label class="item-input-wrapper">
-          <input type="text" placeholder="Title" ng-model="adTitle">
+          <input type="text" placeholder="Title" ng-model="title">
         </label>
         <button class="button button-small" ng-click="getAdByTitle()">
           Submit
@@ -13,10 +13,10 @@
 
     <div class="card responsive-card" ng-repeat="ad in adTitleData">
       <div class="item item-divider">
-        {{ad.adTitle}}
+        {{ad.title}}
       </div>
       <div class="item item-text-wrap">
-        {{ad.adDescription}}
+        {{ad.description}}
       </div>
       <div class="item item-divider icon-left ion-map">
         {{ad.location}}

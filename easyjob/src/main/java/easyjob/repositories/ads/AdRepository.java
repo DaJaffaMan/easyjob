@@ -1,4 +1,4 @@
-package easyjob.repositories;
+package easyjob.repositories.ads;
 
 import easyjob.categories.Category;
 import easyjob.entities.Ad;
@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface AdRepository extends ElasticsearchCrudRepository<Ad, Integer> {
 
-    List<Ad> findAdByAdTitleLike(String adTitle);
+    List<Ad> findAdByTitleLike(String title);
 
     List<Ad> findAdByCategory(Category category);
 

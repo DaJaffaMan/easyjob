@@ -1,7 +1,8 @@
 package easyjob.handlers;
 
+import com.google.gson.Gson;
 import easyjob.entities.Ad;
-import easyjob.repositories.AdRepository;
+import easyjob.repositories.ads.AdRepository;
 import org.springframework.data.elasticsearch.core.geo.GeoPoint;
 import org.springframework.stereotype.Component;
 import spark.Request;
@@ -15,23 +16,25 @@ import java.math.BigDecimal;
 public class PostAdHandler implements Route {
 
     private final AdRepository adRepository;
+    private final Gson gson;
 
     @Inject
     public PostAdHandler(AdRepository adRepository) {
         this.adRepository = adRepository;
+        gson = new Gson();
     }
 
     public Object handle(Request request, Response response) throws Exception {
 
-        String email = request.params(":email");
-        String adTitle = request.params(":adTitle");
-        String adDescription = request.params(":adDescription");
-        BigDecimal fee = new BigDecimal(Double.parseDouble(request.params(":fee")));
-        double lat = Double.parseDouble(request.params(":lat"));
-        double lon = Double.parseDouble(request.params(":lon"));
+        String email = gson.fromJson(request.body(), Ad.class).getEmail();
+        String title = gson.fromJson(request.body(), Ad.class).getTitle();
+        String description = gson.fromJson(request.body(), Ad.class).getDescription();
+        BigDecimal fee = new BigDecimal(Double.parseDouble(String.valueOf(gson.fromJson(request.body(), Ad.class).getFee())));
+        double lat = gson.fromJson(request.body(), Ad.class).getLocation().getLat();
+        double lon = gson.fromJson(request.body(), Ad.class).getLocation().getLon();
         GeoPoint location = new GeoPoint(lat, lon);
 
-        adRepository.save(new Ad(email, adTitle, adDescription, fee, location));
+        adRepository.save(new Ad(email, title, description, fee, location));
 
         return "ad added";
     }

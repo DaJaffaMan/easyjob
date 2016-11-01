@@ -1,4 +1,4 @@
-package easyjob.repositories;
+package easyjob.repositories.ads;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;

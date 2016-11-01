@@ -1,6 +1,6 @@
 package easyjob.handlers;
 
-import easyjob.repositories.AdRepository;
+import easyjob.repositories.ads.AdRepository;
 import org.springframework.stereotype.Component;
 import spark.Request;
 import spark.Response;
@@ -21,9 +21,9 @@ public class GetAdByAdTitleHandler implements Route {
     @Override
     public Object handle(Request request, Response response) throws Exception {
 
-        String adTitle = request.params(":adTitle");
+        String title = request.params(":title");
 
-        return adRepository.findAdByAdTitleLike(adTitle);
+        return adRepository.findAdByTitleLike(title);
 
     }
 }
