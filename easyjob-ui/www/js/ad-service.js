@@ -1,13 +1,19 @@
 angular.module('starter').service('adService', ['$http', function ($http) {
+
+  var defaultUrl = window.location.protocol + '//' + window.location.hostname + ':5000';
+
   return {
     getAdDetailsById: function (adId) {
-      return $http.get(window.location.protocol + '//' + window.location.hostname + ':5000' + '/get/ad/' + adId);
+      return $http({
+        method: 'GET',
+        url: defaultUrl + '/get/ad/' + adId
+      })
     },
 
     getAdDetailsByTitle: function (title) {
       return $http({
         method: 'GET',
-        url: window.location.protocol + '//' + window.location.hostname + ':5000' + '/get/ad/' + title,
+        url: defaultUrl + '/get/ad/' + title
       });
     },
 
@@ -19,11 +25,11 @@ angular.module('starter').service('adService', ['$http', function ($http) {
         "description": description,
         "fee": fee,
         location: {"lat": lat, "lon": lon}
-      }
+      };
 
       return $http({
         method: 'POST',
-        url: window.location.protocol + '//' + window.location.hostname + ':5000' + '/post/ad',
+        url: defaultUrl + '/post/ad',
         headers: {"Content-Type": undefined},
         data: JSON.stringify(ad)
       });
